@@ -15,6 +15,7 @@
         .subtext {position: absolute; width: 100%; text-align: center; text-transform: uppercase; top: 180px; font-size: 20px;}
     </style>
     <script src="https://code.jquery.com/jquery-3.6.2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="jquery.knob.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -34,15 +35,18 @@
             
             <div class="canvas-box">
                 <input id="single-single-arc" class="knob with-subtext"
-                    data-min="0" data-max="100" value="0"
+                    data-min="0"
                     data-bgColor="#F4F6F9" data-fgColor="#F4EAEA" data-fgColorMid="#fab275" data-fgColorEnd="#ff7a00"
-                    data-displayInput=true
+                    data-displayInput="true"
                     data-width="300" data-height="300"
                     data-thickness=".2" data-bgthickness=".2"
-                    data-angleOffset=0 data-linecap=round
-                    data-readOnly=false
+                    data-angleOffset="0" data-linecap="round"
+                    data-readOnly="false"
                     data-inputColor="#000000"
-                    data-shadow=false data-shadowColor="#000000"
+                    data-shadow="false" data-shadowColor="#000000"
+                    data-step="0.1"
+                    value="0"
+                    data-max="100"
                     rel="100"
                 >
                 <div class="subtext">chart sample</div>
@@ -63,9 +67,15 @@
                 value: myVal
             }, {
                 duration: 2000,
-                easing: 'swing',
+                // easing: 'easeOutQuad',
+                easing: 'easeOutCubic',
+                // easing: 'easeOutQuart',
+                // easing: 'easeOutQuint',
+                // easing: 'easeOutExpo',
                 step: function () {
-                    $this.val(Math.ceil(this.value)).trigger('change');
+                    // $this.val(Math.ceil(this.value)).trigger('change');
+                    $this.val((this.value).toFixed(2)).trigger('change');
+                    $this.val((this.value).toFixed(0));
                 }
             })
         // });
