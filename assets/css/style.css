@@ -1,0 +1,18 @@
+body{ padding: 0; margin:0; text-rendering: optimizelegibility; }
+.charts-item { text-align: center; }
+.chart-box { position:relative; height:300px; width:300px; margin: 10px auto;}
+.chart-options { padding: 5px 0; }
+.knob.with-subtext {margin-top: 85px !important;}
+.subtext {position: absolute; width: 100%; text-align: center; text-transform: uppercase; top: 180px; font-size: 20px;}
+
+.circle_progress_wrap {position: relative; width: 120px; height: 120px;}
+.circle_progress_wrap .circle_progress {transform: rotate(180deg);}
+.circle_progress_wrap .frame,
+.circle_progress_wrap .bar {fill: none;}
+.circle_progress_wrap .frame {stroke: #e6e6e6; stroke-linecap: round; stroke-dasharray: 672.301; stroke-dashoffset: 336.15;}
+.circle_progress_wrap .bar {stroke: #03c75a; stroke-linecap: round; animation:stroke 1.2s reverse cubic-bezier(0.445, 0.05, 0.55, 0.95);}
+.circle_progress_wrap .value {position: absolute; left: 0; right: 0; bottom: 0; top: 0; text-align: center; color: #888; font-size: 16px; line-height: 120px;}
+
+@keyframes stroke {
+    to {stroke-dashoffset: 691.15}
+}
